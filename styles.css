@@ -1,0 +1,360 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  color: #333;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  color: #fff9e6;
+  font-size: 1.2rem;
+}
+
+/* Prompt Section */
+.prompt-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.prompt-box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.prompt {
+  font-size: 1.5rem;
+  color: #fa8347;
+  margin: 15px 0;
+  font-weight: bold;
+  font-family:  monospace
+}
+
+.button {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #357abd;
+  transform: translateY(-3px);
+}
+
+/* Note Section */
+.note-section {
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.note-textarea {
+  width: 100%;
+  border: 2px solid #f6d365;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.note-textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown {
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px solid #f6d365;
+  transition: all 0.3s ease;
+  
+}
+
+.dropdown:focus {
+  border-color: #4a90e2;
+  color: rgb(255, 0, 85);
+  outline: none;
+}
+
+/* Notes List */
+.notes-list {
+  margin: 30px auto;
+}
+
+.note-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideIn 0.5s ease;
+}
+
+.note-content {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.note-category {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.delete-btn {
+  background: #e74c3c;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 20px;
+}
+
+.export-btn,
+.import-btn {
+  background: #16a085;
+}
+
+.export-btn:hover,
+.import-btn:hover {
+  background: #12876b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .note-textarea,
+  .prompt-box,
+  .note-card {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+
+  .button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 20px 0;
+    color: rgb(169, 0, 0);
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  /* Mood Tracker */
+  .mood-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .mood-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .mood-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Calendar */
+  .calendar-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .calendar-section input {
+    padding: 10px;
+    border: 2px solid #ff9a9e;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  /* Prompts, Notes, and Buttons */
+  .prompt-box, .note-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .button:hover {
+    background: #357abd;
+  }
+
+  
+/* General Styles */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .main-title {
+    font-size: 2.8rem;
+    color: #ffffff;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    animation: popIn 1.5s ease-in-out;
+  }
+  
+  .subtitle {
+    color: #fff9e6;
+    font-size: 1.2rem;
+  }
+  
+  /* Buttons */
+  .button {
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ff6a95, #ffc371);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .glowing-btn {
+    box-shadow: 0 4px 10px rgba(255, 106, 149, 0.7);
+  }
+  
+  .button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 106, 149, 0.9);
+  }
+  
+  /* Animations */
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 2rem;
+    }
+    .button {
+      font-size: 0.9rem;
+    }
+  }
+  
+  

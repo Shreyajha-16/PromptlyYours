@@ -1,0 +1,85 @@
+<!doctype html>
+<html
+  lang="en"
+  ng-app="notesApp"
+  ng-controller="notesCtrl"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta 
+  <body>
+    <div class="container">
+
+        <!-- Header -->
+    <header>
+      <h1 class="main-title">✨ Promptly Yours ✨</h1>
+      <p class="subtitle">Brighten your day with creative journaling!</p>
+    </header>
+
+ <!-- Prompt Section -->
+ <div class="prompt-container">
+    <h2>🌟 Today's Prompt 🌟</h2>
+    <div class="prompt-box">
+      <p class="prompt">{{currentPrompt}}</p>
+      <button class="button glowing-btn" ng-click="generatePrompt()">New Prompt</button>
+    </div>
+  </div>
+
+    <!-- Date and Mood Section -->
+    <div class="date-mood-section">
+        <div class="calendar-section">
+          <label for="entryDate">📅 Select Date:</label>
+          <input type="date" id="entryDate" ng-model="entryDate" ng-change="filterNotesByDate()">
+        </div>
+        <div class="mood-section">
+          <h3>How are you feeling? 💖</h3>
+          <div class="moods">
+            <button class="mood-btn" ng-click="setMood('😀')">😀</button>
+            <button class="mood-btn" ng-click="setMood('😊')">😊</button>
+            <button class="mood-btn" ng-click="setMood('😐')">😐</button>
+            <button class="mood-btn" ng-click="setMood('😔')">😔</button>
+            <button class="mood-btn" ng-click="setMood('😢')">😢</button>
+          </div>
+          <p class="current-mood">Selected Mood: {{selectedMood || 'None'}}</p>
+        </div>
+      </div>
+
+    <!-- Note Creation Section -->
+    <div class="note-section">
+        <h2>Create Your Note 📝</h2>
+        <textarea class="note-textarea" ng-model="newNote.content" placeholder="Write your thoughts..." rows="5"></textarea>
+        <div class="actions">
+          <select class="dropdown" ng-model="newNote.category">
+            <option value="" disabled selected>Select The Reason</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="Travel">Travel</option>
+            <option value="Gratitude">Gratitude</option>
+          </select>
+          <button class="button glowing-btn" ng-click="saveNote()">Save Note</button>
+        </div>
+      </div>
+
+    <!-- Notes List -->
+    <div class="notes-list">
+        <h2>Your Notes 📚</h2>
+        <div class="note-card" ng-repeat="note in filteredNotes" ng-class="note.category.toLowerCase()">
+          <p class="note-content">{{note.content}}</p>
+          <span class="note-category">Category: {{note.category}}</span>
+          <span class="note-date">Date: {{note.date}}</span>
+          <span class="note-mood">Mood: {{note.mood || 'None'}}</span>
+          <button class="button delete-btn" ng-click="deleteNote($index)">Delete</button>
+        </div>
+      </div>
+
+ <!-- Footer -->
+ <footer>
+    <button class="button glowing-btn export-btn" ng-click="exportNotesToPDF()">Download PDF</button>
+    <input type="file" id="importFile" style="display: none" onchange="angular.element(this).scope().importNotes(event)">
+    <label for="importFile" class="button glowing-btn import-btn">Import Notes</label>
+  </footer>
+</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
